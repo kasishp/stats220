@@ -2,13 +2,13 @@
 
 ### This is my repo for STATS 220. 
 
-##### **A little about me:**
+#### **A little about me:**
 
 - I am undertaking a degree in *Bachelor of Science*, majoring in **Marine Science and Applied Statistics**
 - I am taking STATS 220 because I want to develop my statistics skills further
 - I am interested in learning about R programming and tidyverse
 
-###### **Top Three Places you'll find me at Uni:** 
+##### **Top Three Places you'll find me at Uni:** 
 
 1. Elam workshops
 2. General Library
