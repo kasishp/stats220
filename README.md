@@ -18,7 +18,11 @@
 
 Do you ever feel super stiff and sore sitting in front of your laptop, coding all day? When today's your lucky day to go and check out the super cheap *UOA Gym Memeber* which only checks out at costing you approximately $4.00 a week!!! 
 
-[GYM](https://www.auckland.ac.nz/en/on-campus/facilities-and-services/sport-and-recreation/fitness/recreation-centre-memberships.html)
+[UOA GYM](https://www.auckland.ac.nz/en/on-campus/facilities-and-services/sport-and-recreation/fitness/recreation-centre-memberships.html) 
+
+Once you've signed up, go ahead to check out all the fun activities you can do for free!! 
+[Classes and Programs](https://www.auckland.ac.nz/en/on-campus/facilities-and-services/sport-and-recreation/fitness/programmes-classes.html)
+
 
 _A meme that captures how I currently feel about my university studies is_ 
 
