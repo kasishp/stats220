@@ -16,12 +16,15 @@
 
 ### University Life  
 
-Do you ever feel super stiff and sore sitting in front of your laptop, coding all day? When today's your lucky day to go and check out the super cheap *UOA Gym Memeber* which only checks out at costing you approximately $4.00 a week!!! 
+Do you ever feel super stiff and sore sitting in front of your laptop, coding all day? When today's your lucky day to go and check out the super cheap [*UOA Gym Membership*](https://www.auckland.ac.nz/en/on-campus/facilities-and-services/sport-and-recreation/fitness/recreation-centre-memberships.html) which only checks out at costing you approximately $4.00 a week!!! 
 
 [UOA GYM](https://www.auckland.ac.nz/en/on-campus/facilities-and-services/sport-and-recreation/fitness/recreation-centre-memberships.html) 
 
-Once you've signed up, go ahead to check out all the fun activities you can do for free!! 
-[Classes and Programs](https://www.auckland.ac.nz/en/on-campus/facilities-and-services/sport-and-recreation/fitness/programmes-classes.html)
+Once you've signed up, go ahead to check out all the [*Classes and Programs*](https://www.auckland.ac.nz/en/on-campus/facilities-and-services/sport-and-recreation/fitness/programmes-classes.html) you can do with your new membership!! 
+
+[Classes and Programs](https://www.auckland.ac.nz/en/on-campus/facilities-and-services/sport-and-recreation/fitness/programmes-classes.html) 
+
+UOA has also made it super easy to go in through the [*Membership Portal*](https://sportandrec.auckland.ac.nz/) to book and manage classes!!
 
 
 _A meme that captures how I currently feel about my university studies is_ 
