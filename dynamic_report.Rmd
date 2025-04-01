@@ -1,0 +1,129 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+body {
+font-family: 'Merriweather';
+background-color: #041346; 
+color: #F8FF22;
+text-align: center
+} 
+
+h1, h2, h3{
+font-weight: bold;
+text-decoration: underline; 
+font-size: 24pt
+} 
+
+p {
+color: #1FCF2A; 
+font-size: 16pt
+}
+```
+
+## Tracking the Timeliness and Occupancy of Auckland Buses during an Individuals Destination in their Trip: 
+
+\
+\
+*The data was collect by one person that travels to uni daily by bus. The information was tracked through observational logging by completing a [Google form survey](https://forms.gle/6U6CbtmCQt8EkpoC7). To maintain accuracy in the data collection process all on-boarding bus times were checked when the individual tagged on through their AT HOP card, and the timeliness of the bus was measured of weather the bus arrived on scheduled time based off the AT HOP Mobile app or not.*
+\
+*We are analysing if a bus is arriving on their scheduled time at the bus or not and if they are not then how late are they arriving. We would also like to find out weather there is a certain time that most buses are arriving late and also see if there is a connection between how busy the bus is and the lateness of the bus. The busyness of the bus would be measured by if there was a seat occupied next to or in front of you. Furthermore, the bus lateness was only recorded for the first bus they caught on their trip (if they had caught more than one bus to reach their destination).* 
+\
+
+\
+
+### Bus Lateness:
+
+
+```{r}
+library(tidyverse) #loading the package 
+
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSpFsDWmXk-s4JIxUgI8WvxgfeC9aDzbwH7zAVRe0ia40Cj98Zo1tFfnFv4LtKaYMx_qDZoK6f2KaTO/pub?gid=966910628&single=true&output=csv") #naming the csv logged_data
+
+latest_data <- logged_data %>% 
+  rename( buses_caught = 2, 
+          boarding_time = 3, 
+          bus_on_time = 4, 
+          person_seated = 5, 
+          bus_lateness = 6 ) # renaming the variables to more appropoerite names
+
+latest_data %>% 
+  ggplot() + 
+  geom_bar(aes(x = bus_on_time), 
+           fill = "skyblue2") + 
+  labs(title = "Frequency of Bus Punctuality", 
+       subtitle = "The number of time the bus was late or on time", 
+       y = "Frequecy", 
+       x = "Bus On Time", 
+       caption = "Source: Bus Trips Survey By Kasish Prasad") #bar graph of weather the bus was on time or not 
+
+```
+
+```{r}
+latest_data %>% 
+  ggplot() + 
+  geom_bar(aes(x = bus_lateness), 
+           fill = "#1FDF2A") + 
+  labs(title = "The Frequency of Bus Lateness for the Buses", 
+       y = "Frequency", 
+       x = "Lateness of the Bus (Mintues)", 
+       caption = "Source: Bus Trips Survey By Kasish Prasad") # the bar graph of bus lateness 
+
+meanBL <- round(mean(latest_data$bus_lateness, na.rm = TRUE), 1) #give the mean bus lateness time a name and rounding it to 1dp - named it so I can use it in the in line code to write up a summary interpretation. 
+
+maxBL <- max(latest_data$bus_lateness, na.rm = TRUE) #the latest the bus had arrived 
+
+total_obs <- length(latest_data$bus_lateness) 
+sumBL <- sum(latest_data$bus_lateness, na.rm = TRUE)
+```
+\
+Of the buses that did not arrive on time, the mean number of times the buses were late was approximately `r meanBL` minutes. The latest a bus had arrived to the bus stop from their scheduled time was `r maxBL` minutes. From all of the `r total_obs` observations, the total number of bus lateness was `r sumBL` minutes. 
+
+
+![](https://y.yarn.co/ba770689-b687-4c3b-aac2-4e89259baffe_text.gif)
+
+\
+
+### Seat Occupation and Bus Lateness:
+```{r}
+latest_data %>% 
+  ggplot() + 
+  geom_bar(aes(x = bus_lateness, 
+           fill = person_seated)) + 
+  scale_fill_manual(values = c("I don't remember" = "#F8DA22", "I was standing on the bus today" = "#4FCA2A", "No" = "#63B8FF", "Yes" = "royalblue")) + 
+  labs(title = "BUSY BUSY BUSY... LATE LATE LATE!", 
+       subtitle = "The Bus Lateness and Seats Occupied around Respondants", 
+       y = "Frequency", 
+       x = "Lateness of the Bus (Mintues)", 
+       fill = "Seat Occupation aorund you", 
+       caption = "Source: Bus Trips Survey By Kasish Prasad")
+# bar graph of the lateness of the bus and weather there was a person next to in front you
+```
+\
+The graph above is looking at how the busy the bus was and weather there is a potential relationship between the bus lateness and the busyness of the bus. The busyness of the the bus was measured by weather there was a person sitting next to or in front of you. If the person was standing the it measures as the bus being very busy and crowded.  
+
+### Boarding Time and Bus Lateness: 
+```{r}
+latest_data %>% 
+  ggplot() + 
+  geom_bar(aes( x = boarding_time, 
+                fill = bus_on_time)) + 
+  labs(title = "The Times a Passenger Got on Bus and On-Time Status of Bus", 
+       subtitle = "Visualising how the Boarding times of the Bus correaltes with Buses On-Time Performance", 
+       caption = "Source: Bus Trips Survey by Kasish Prasad",
+       y = "Frequency", 
+       x = "Time Got on Bus (24 hour time)",
+       fill = "Was Bus On Time?") + 
+  scale_fill_manual(values = c("No" = "#1FCF2A", "Yes"= "#F8DF22"))
+
+# bar graph of the time I got on bus and its coloured by weather it was on time or not  
+```
+\
+We were interested in to find out which times if any there buses are late the most. This is what the graph above is depicting. 
